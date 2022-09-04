@@ -13,16 +13,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-@ContextConfiguration(locations={"file:/Users/roopre/git/boot_move/boot_move/src/test/resources/spring/context-datasource.xml"})
-@RunWith(SpringJUnit4ClassRunner.class)
+//@ContextConfiguration(locations={"file:/Users/roopre/git/boot_move/boot_move/src/main/resources/spring/context-datasource.xml"})
+//@RunWith(SpringJUnit4ClassRunner.class)
 public class HikariDataSourceTest {
 
 	private static final Logger log = Logger.getLogger(HikariDataSourceTest.class);
 	
-	@Autowired
+	//@Autowired
 	private DataSource dataSource;
 	
-	@Autowired
+	//@Autowired
 	private SqlSessionFactory sqlSessionFactory;
 	
 	//@Test
@@ -35,7 +35,7 @@ public class HikariDataSourceTest {
 		}
 	}
 	
-	@Test
+	//@Test
 	public void sqlSessionFactoryTest() {
 		try {
 			SqlSession session = sqlSessionFactory.openSession();
