@@ -4,6 +4,8 @@ import java.sql.Connection;
 
 import javax.sql.DataSource;
 
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,13 +22,29 @@ public class HikariDataSourceTest {
 	@Autowired
 	private DataSource dataSource;
 	
-	@Test
+	@Autowired
+	private SqlSessionFactory sqlSessionFactory;
+	
+	//@Test
 	public void hikariDataSourceTest() {
 		try {
 			Connection conn = dataSource.getConnection();
 			log.info("'Connection 객체 : " + conn + "'");
 		}catch(Exception e) {
 			log.info(e+ " : " + dataSource);
+		}
+	}
+	
+	@Test
+	public void sqlSessionFactoryTest() {
+		try {
+			SqlSession session = sqlSessionFactory.openSession();
+			Connection conn = session.getConnection();
+			log.info("'Session Object : " + session + "'");
+			log.info("'Connection Object : " + conn + "'");
+		}
+		catch(Exception e){
+			log.info(e + " : " + sqlSessionFactory);
 		}
 	}
 }
