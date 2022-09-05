@@ -7,9 +7,9 @@ id="WebApp_ID" version="2.5"
 
 	<!-- needed for ContextLoaderListener 
 	컨텍스트 로드 리스너로 등록했기때문에 톰켓이 시작되면 1컨테이너를 올린다-->
-	<context-param>
+<!-- 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:/spring/context-*.xml</param-value>
-	</context-param>
+	</context-param> -->
 	
-</web-app>
+</web-app>               
